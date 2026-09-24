@@ -3,13 +3,11 @@
 
 
 
-
-#include <cstdint>
 #include <stdint.h>
 #include <stdlib.h>
 
 
-#define FILEDIRECTORY ""
+#define FILEDIRECTORY "chip8-roms-master/games/Airplane.ch8"
 #define MEMSIZE 4096
 #define STACKSIZE 16
 #define VxSIZE 16
@@ -32,7 +30,9 @@ typedef struct {
 
 
 
-void load_rom(machine_t machine);
+void load_rom(machine_t* machine);
+
+void init_machine(machine_t* machine);
 
 
 

@@ -11,8 +11,11 @@
 int main(int argc, char** argv) {
     
     machine_t mac;
+
+    init_machine(&mac);
     load_rom(&mac);
 
+    printf("%x", mac.mem[0x200]);
 
     return 0;
 
