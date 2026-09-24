@@ -15,7 +15,12 @@ int main(int argc, char** argv) {
     init_machine(&mac);
     load_rom(&mac);
 
-    printf("%x", mac.mem[0x200]);
+    int mustQuit = 0;
+    while(!mustQuit){
+
+        
+
+    }
 
     return 0;
 

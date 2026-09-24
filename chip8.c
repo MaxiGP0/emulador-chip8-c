@@ -32,7 +32,21 @@ void load_rom(machine_t* machine) {
 
 void init_machine(machine_t* machine) {
 
+    machine->sp = machine->i = machine->dt = machine->st = 0x00;
     
+    machine->pc = 0x200;                        // 512b memoria ya reservadas.
+    
+    for (int i=0; i < MEMSIZE; i++) {           
+        machine->mem[i] = 0x00;                 // array de memoria.
+    }
+
+    for (int i=0; i < STACKSIZE; i++) {
+        machine->stack[i] = 0;                  // array de stack.
+    }
+
+    for (int i=0; i < VxSIZE; i++) {
+        machine->v[i] = 0;                      // array de registros.
+    }
 
 }
 
