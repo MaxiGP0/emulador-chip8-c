@@ -18,7 +18,12 @@ int main(int argc, char** argv) {
     int mustQuit = 0;
     while(!mustQuit){
 
-        
+        // Leer  el opcode.
+        uint16_t opcode = (mac.mem[mac.pc] << 8) | mac.mem[mac.pc++];
+
+
+        printf("%x", opcode);
+
 
     }
 
