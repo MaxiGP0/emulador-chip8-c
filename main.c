@@ -19,8 +19,10 @@ int main(int argc, char** argv) {
     while(!mustQuit){
 
         // Leer  el opcode.
-        uint16_t opcode = (mac.mem[mac.pc] << 8) | mac.mem[mac.pc++];
-
+        uint16_t opcode = (mac.mem[mac.pc] << 8) | mac.mem[mac.pc + 1];
+        
+        if (++mac.pc == MEMSIZE) // Buffer circular.
+            mac.pc = 0;
 
         printf("%x", opcode);
 
