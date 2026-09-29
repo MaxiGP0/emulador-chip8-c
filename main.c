@@ -134,7 +134,19 @@ int main(int argc, char** argv) {
                 printf("DRW Vx, Vy, nb / %x, %x, %x\n", x, y, n);
                 break;
 
-            
+            case 0xE: // SKP | SKNP.
+                if (kk == 0x9E) { // SKP Vx - salta la instruccion si la tecla [\n]
+
+                    printf("SKP Vx / %x\n", x);
+
+                } else if (kk == 0xA1) { // SKNP Vx - salta la instruccion si la tecla
+
+                    printf("SKNP Vx / %x\n", x);
+
+                }
+                break;
+
+
 
 
         
