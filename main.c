@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <strings.h>
 
 #include "chip8.h"
 
@@ -112,6 +113,28 @@ int main(int argc, char** argv) {
                     
                 }
                 break;
+
+            case 9: // SNE Vx, Vy - salta la instruccion si los registros son iguales.
+                printf("SNE Vx, Vy / %x, %x\n", x, y);
+                break;
+
+            case 0xA: // LD I, addr - carga en I un inmediato.
+                printf("LD I, addr / %x\n", nnn);
+                break;
+
+            case 0xB: // JP V0, addr - salta a V0 + addr.
+                printf("JP V0 , addr / %x\n", nnn);
+                break;
+
+            case 0xC: // RND Vk, kk - pone un valor aleatorio en el registro.
+                printf("RND Vx, kk / %x, %x\n", x, kk);
+                break;
+
+            case 0xD: // DRW Vx, Vy, nb - dibuja en la pantalla
+                printf("DRW Vx, Vy, nb / %x, %x, %x\n", x, y, n);
+                break;
+
+            
 
 
         
