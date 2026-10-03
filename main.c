@@ -194,7 +194,7 @@ int main(int argc, char** argv) {
         
         }
 
-        printf("%x", opcode);
+        // printf("%x", opcode);
 
 
     }
