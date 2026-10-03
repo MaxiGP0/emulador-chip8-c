@@ -22,7 +22,8 @@ int main(int argc, char** argv) {
         // Leer y cargar el opcode.
         uint16_t opcode = (mac.mem[mac.pc] << 8) | mac.mem[mac.pc + 1];
         
-        if ( (mac.pc + 2) == MEMSIZE) // Buffer circular.
+        mac.pc += 2;
+        if (mac.pc == MEMSIZE) // Buffer circular.
             mac.pc = 0;
         
         // Parametros.
