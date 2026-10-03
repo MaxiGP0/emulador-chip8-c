@@ -145,7 +145,48 @@ int main(int argc, char** argv) {
 
                 }
                 break;
+            
+            case 0xF: // LD x DT | LD x K | LD DT x | LD ST x | ADD I x | LD F x | LD B x |    LD [I] x | LD x [I].
+                switch (kk) {
 
+                    case 0x07: // LD Vx DT. 
+                        printf("LD %x, DT\n", x);
+                        break;
+
+                    case 0x0A: // LD Vx K.
+                        printf("LD %x, K\n", x);
+                        break;
+                        
+                    case 0x15: // LD DT Vx.
+                        printf("LD DT, %x\n", x);
+                        break;
+
+                    case 0x18: // LD ST Vx.
+                        printf("LD ST, %x\n", x);
+                        break;
+
+                    case 0x1E: // ADD I Vx.
+                        printf("ADD I, %x\n", x);
+                        break;
+
+                    case 0x29: // LD F Vx.
+                        printf("LD F, %x\n", x);
+                        break;
+
+                    case 0x33: // LD B Vx.
+                        printf("LD B, %x\n", x);
+                        break;
+                    
+                    case 0x55: // LD [I] Vx.
+                        printf("LD [I], %x\n", x);
+                        break;
+
+                    case 0x65: // LD Vx [I].
+                        printf("LD %x [I]", x);
+                        break;
+
+                }
+                break;
 
 
 
